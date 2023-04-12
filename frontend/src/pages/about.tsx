@@ -2,12 +2,14 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Header from "@/components/shared/Header";
 import Grid from "@mui/material/Grid";
+import Seo from "@/components/shared/Seo";
 
 const About = () => {
   return (
     <>
+      <Seo />
       <Header title="About Us" />
-      <Container>
+      <Container maxWidth="md">
         <Grid container mt={6} mb={6} gap={2}>
           <Grid item xs={12}>
             <Typography variant="h4">

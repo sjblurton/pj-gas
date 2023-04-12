@@ -1,4 +1,4 @@
-export const pages = ["Home", "About", "Contact", "Blog"] as const;
+export const pages = ["Home", "About", "Contact"] as const;
 export const drawerWidth = 240;
 export const title = "JP";
 export const subtitle = "Gas and plumbing";
