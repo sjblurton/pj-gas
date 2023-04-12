@@ -13,7 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import { company, drawerWidth, pages } from "@/constants";
+import { drawerWidth, pages, title } from "@/constants";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -26,7 +26,7 @@ const Navbar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        {company}
+        {title}
       </Typography>
       <Divider />
       <List>
@@ -48,32 +48,30 @@ const Navbar = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" elevation={0} sx={{ background: "#fff" }}>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton
-            color="inherit"
+            color="primary"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{
+              mr: 2,
+              display: { sm: "none" },
+            }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            {company}
-          </Typography>
+          <Link href={"/"}>
+            <Button>{title}</Button>
+          </Link>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {pages.map((page) => (
               <Link
                 key={page}
                 href={page === "Home" ? "/" : "/" + page.toLowerCase()}
               >
-                <Button sx={{ color: "#fff" }}>{page}</Button>
+                <Button>{page}</Button>
               </Link>
             ))}
           </Box>
@@ -85,7 +83,7 @@ const Navbar = () => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },

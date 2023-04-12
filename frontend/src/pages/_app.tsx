@@ -8,11 +8,12 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Layout from "@/components/layout";
 
+export const primaryColor = "#131200";
+
 const theme = createTheme({
   palette: {
-    mode: "dark",
     primary: {
-      main: "#1581DF",
+      main: primaryColor,
     },
     secondary: {
       main: "#1F9700",

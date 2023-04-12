@@ -1,7 +1,7 @@
-import React from "react";
+import Typography from "@mui/material/Typography";
 
 const Blog = () => {
-  return <div>Blog</div>;
+  return <Typography variant="h2">Blog</Typography>;
 };
 
 export default Blog;
